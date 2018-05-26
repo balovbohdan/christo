@@ -2,9 +2,13 @@
  * Main class.
  * Think about it as mediator that controls everything in the program.
  */
-export default class Christo {
+var Christo = /** @class */ (function () {
+    function Christo() {
+    }
     /**
      * Starts 'Christo'.
      */
-    static start() { console.log('ok'); }
-}
+    Christo.start = function () { console.log('ok'); };
+    return Christo;
+}());
+export default Christo;

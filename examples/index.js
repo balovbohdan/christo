@@ -1,3 +1,3 @@
-import Christo from '../src/Christo';
+import Christo from '../Christo';
 
-Christo.start();
+Christo.start({ langCode: 'ru' });
