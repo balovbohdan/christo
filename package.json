@@ -24,5 +24,14 @@
   "bugs": {
     "url": "https://github.com/balovbohdan/christo-bot/issues"
   },
-  "homepage": "https://github.com/balovbohdan/christo-bot#readme"
+  "homepage": "https://github.com/balovbohdan/christo-bot#readme",
+  "dependencies": {
+    "phpmorphy": "^2.0.13"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0"
+  }
 }
