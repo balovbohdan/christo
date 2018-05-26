@@ -9,24 +9,6 @@ import Morphy from 'phpmorphy';
  */
 export default class Keywords {
     /**
-     * Extracts keywords from some sentence.
-     * P.S. Every string will be considered as sentence.
-     * @param {string} sentence
-     * @returns {string[]} Unique keywords.
-     */
-    static extractFromSentence(sentence:string):string[] {
-        return Keywords.filter(
-            ArrayUtils.getUnique(
-                Keywords.getBaseForms(
-                    sentence
-                        .replace(/[^a-zа-я1-9\s]+/ig, '')
-                        .match(/(\b\w+\b)|[а-я]+/ig)
-                )
-            )
-        );
-    }
-
-    /**
      * Returns base forms of keywords.
      * @param {string[]} keywords
      * @returns {*[]}

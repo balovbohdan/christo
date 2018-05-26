@@ -1,7 +1,8 @@
 import Keywords from './Keywords';
+import KeywordsExtractor from './KeywordsExtractor';
 import Morphy from 'phpmorphy';
-import FileLoader from './FileLoader';
-import KeywordsFile from "./KeywordsFile";
+import KeywordsData from "./db/KeywordsData";
+import Teacher from './Teacher';
 
 type Params = {
     langCode?:string
@@ -31,14 +32,16 @@ export default class Christo {
     static start(params?:Params) {
         Christo.getInst(params);
 
-        const keywords = Keywords.extractFromSentence('почему   не    пускает в   дз  ');
-        console.log(keywords);
+        // const keywords = KeywordsExtractor.extract('почему   не    пускает в   дз.   почему пропал доступ к дз; заебали уже все');
+        // console.log(keywords);
 
-        KeywordsFile.load({ src: `${__dirname}/../tests/testKeywords.json` })
-            .then(keywordsFile => {
-                console.log(keywordsFile);
-            })
-            .catch((e) => console.log.bind(console, `Failed to start 'Christo'.`, e));
+        // KeywordsData.instantiate()
+        //     .then(keywordsFile => {
+        //         console.log(keywordsFile.getAll());
+        //     })
+        //     .catch((e) => console.log.bind(console, `Failed to start 'Christo'.`, e));
+
+        Teacher.teach();
     }
 
     /**
