@@ -1,10 +1,18 @@
 import DB from './DB';
 
+type DbDataType = Array<{id:string, sentences:string[]}>;
+
 /**
  * Learning plurality model class.
  * Loads learning plurality data.
  */
 export default class KeywordsLearningPlurality extends DB {
+    /**
+     * Returns all data got from DB.
+     * @returns {DbDataType}
+     */
+    getAll():DbDataType { return Array.isArray(this.__data) ? this.__data : []; }
+
     /**
      * DB table name.
      * @type {string}
@@ -15,7 +23,7 @@ export default class KeywordsLearningPlurality extends DB {
     /**
      * Prepares dirty data got from DB to be saved locally.
      * @param {string} dirtyData
-     * @returns {Array<{}>}
+     * @returns {DbDataType}
      * @protected
      */
     __prepareDirtyData(dirtyData:string):Array<{}> {
